@@ -40,7 +40,7 @@ HSVWidget::HSVWidget(QWidget *parent) :
     Q_ASSERT(width() == height());
 
     pixmap = QPixmap(size());
-    pixmap.fill(Qt::white);
+    pixmap.fill(Qt::transparent);
 
     pixmapHCircle = pixmap.copy();
 
@@ -167,6 +167,7 @@ void HSVWidget::updateTriangle()
 {
     QPainter painter(&pixmap);
 
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.setPen(Qt::transparent);
     painter.drawPixmap(QPoint(0, 0), pixmapHCircle);
 
@@ -203,7 +204,8 @@ void HSVWidget::createHCirclePixmap()
     path.addRect(pixmap.rect());
 
     painter.setPen(Qt::transparent);
-    painter.setBrush(Qt::white);
+    painter.setBrush(Qt::transparent);
     painter.setRenderHints(QPainter::Antialiasing);
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.drawPath(path.subtracted(hCircle));
 }
