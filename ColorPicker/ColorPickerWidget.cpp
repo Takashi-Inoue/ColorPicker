@@ -71,6 +71,11 @@ void ColorPickerWidget::setColor(const QColor &color)
     ui->hsvWidget->setColor(currentColor);
 }
 
+QColor ColorPickerWidget::getColor() const
+{
+    return currentColor;
+}
+
 void ColorPickerWidget::onHsvChanged(double h, double s, double v)
 {
     currentColor = QColor::fromHsvF(h, s, v);

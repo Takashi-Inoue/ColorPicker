@@ -37,6 +37,7 @@ public:
     ~ColorPickerWidget() override;
 
     void setColor(const QColor &color);
+    QColor getColor() const;
 
 private slots:
     void onHsvChanged(double h, double s, double v);
