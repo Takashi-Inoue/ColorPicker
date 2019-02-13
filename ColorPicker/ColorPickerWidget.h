@@ -29,6 +29,9 @@ class ColorPickerWidget : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void colorChanged(const QColor &color);
+
 public:
     explicit ColorPickerWidget(QWidget *parent = nullptr);
     ~ColorPickerWidget() override;

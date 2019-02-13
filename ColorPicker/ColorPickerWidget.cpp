@@ -66,6 +66,8 @@ void ColorPickerWidget::onHsvChanged(double h, double s, double v)
 
     ui->colorDisplay->setColor(currentColor);
     ui->lineEditARGB->setText(currentColor.name(QColor::HexArgb).toUpper());
+
+    emit colorChanged(currentColor);
 }
 
 void ColorPickerWidget::on_lineEditARGB_textEdited(const QString &arg1)
@@ -78,6 +80,8 @@ void ColorPickerWidget::on_lineEditARGB_textEdited(const QString &arg1)
     ui->colorDisplay->setColor(currentColor);
     ui->sliderAlpha->setValue(currentColor.alpha());
     ui->hsvWidget->setColor(currentColor);
+
+    emit colorChanged(currentColor);
 }
 
 void ColorPickerWidget::on_sliderAlpha_actionTriggered(int /*action*/)
@@ -86,4 +90,6 @@ void ColorPickerWidget::on_sliderAlpha_actionTriggered(int /*action*/)
 
     ui->colorDisplay->setColor(currentColor);
     ui->lineEditARGB->setText(currentColor.name(QColor::HexArgb).toUpper());
+
+    emit colorChanged(currentColor);
 }
