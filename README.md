@@ -2,7 +2,7 @@
 
 This is circular HSV color picker for Qt programmers. Please add "ColorPicker" directory to your project.
 
-![ss](https://user-images.githubusercontent.com/9402867/52634755-5e045a00-2f0b-11e9-88b6-54212573686b.png)
+![ss](https://user-images.githubusercontent.com/9402867/52685390-e414b500-2f8c-11e9-80cd-98679b8c8532.png)
 
 
 
