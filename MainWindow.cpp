@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2019 Takashi Inoue
  *
  * This file is part of ColorPicker.
@@ -19,11 +19,14 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include <QRandomGenerator>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->colorPicker->setColor(QColor::fromRgba(QRandomGenerator::global()->generate()));
 }
 
 MainWindow::~MainWindow()

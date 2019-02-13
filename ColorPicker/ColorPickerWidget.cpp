@@ -59,6 +59,18 @@ ColorPickerWidget::~ColorPickerWidget()
     delete ui;
 }
 
+void ColorPickerWidget::setColor(const QColor &color)
+{
+    if (currentColor == color)
+        return;
+
+    currentColor = color;
+    ui->colorDisplay->setColor(currentColor);
+    ui->lineEditARGB->setText(currentColor.name(QColor::HexArgb).toUpper());
+    ui->sliderAlpha->setValue(currentColor.alpha());
+    ui->hsvWidget->setColor(currentColor);
+}
+
 void ColorPickerWidget::onHsvChanged(double h, double s, double v)
 {
     currentColor = QColor::fromHsvF(h, s, v);
